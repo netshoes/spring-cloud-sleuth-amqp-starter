@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.netshoes.springframework.cloud.sleuth.instrument.amqp.TraceSpanAmqpMessagingAutoConfiguration,\
+com.netshoes.springframework.cloud.sleuth.instrument.amqp.SleuthAmqpMessagingAutoConfiguration
