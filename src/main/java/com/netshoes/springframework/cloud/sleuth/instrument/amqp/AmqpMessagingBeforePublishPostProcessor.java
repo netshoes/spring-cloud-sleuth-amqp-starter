@@ -31,8 +31,8 @@ public class AmqpMessagingBeforePublishPostProcessor implements MessagePostProce
 
   @Override
   public Message postProcessMessage(Message message) throws AmqpException {
-    final Span currentSpan = tracer.getCurrentSpan();
-    final Span span = tracer.createSpan(currentSpan.getName(), currentSpan);
+    final Span span = tracer.getCurrentSpan();
+    //final Span span = tracer.createSpan(currentSpan.getName(), currentSpan);
     injector.inject(span, message);
     return message;
   }
