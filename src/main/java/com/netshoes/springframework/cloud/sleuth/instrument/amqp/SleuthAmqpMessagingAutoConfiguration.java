@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * AutoConfiguration that register a {@link AmqpMessagingBeforePublishPostProcessor} and a {@link
- * AmqpMessagingBeforeReceiveInterceptor}.
+ * AutoConfiguration that register a {@link RabbitListenerAspect}, a {@link RabbitTemplateAspect}
+ * and {@link AmqpMessagingSpanManager}.
  *
  * @author André Ignacio
  */
@@ -26,17 +26,28 @@ public class SleuthAmqpMessagingAutoConfiguration {
 
   @Bean
   @ConditionalOnProperty(value = "spring.sleuth.amqp.enabled", matchIfMissing = true)
-  @ConditionalOnMissingBean(AmqpMessagingBeforePublishPostProcessor.class)
-  public AmqpMessagingBeforePublishPostProcessor amqpMessagingBeforePublishPostProcessor(
-      Tracer tracer, AmqpMessagingSpanInjector amqpMessagingSpanInjector) {
-    return new AmqpMessagingBeforePublishPostProcessor(amqpMessagingSpanInjector, tracer);
+  @ConditionalOnMissingBean(RabbitListenerAspect.class)
+  public RabbitListenerAspect rabbitListenerAspect(
+      AmqpMessagingSpanManager amqpMessagingSpanManager) {
+    return new RabbitListenerAspect(amqpMessagingSpanManager);
   }
 
   @Bean
   @ConditionalOnProperty(value = "spring.sleuth.amqp.enabled", matchIfMissing = true)
-  @ConditionalOnMissingBean(RabbitMQListenerAspect.class)
-  public RabbitMQListenerAspect rabbitMQListenerAspect(
-      AmqpMessagingSpanExtractor amqpMessagingSpanExtractor, Tracer tracer) {
-    return new RabbitMQListenerAspect(amqpMessagingSpanExtractor, tracer);
+  @ConditionalOnMissingBean(RabbitListenerAspect.class)
+  public RabbitTemplateAspect rabbitTemplateAspect(
+      AmqpMessagingSpanManager amqpMessagingSpanManager) {
+    return new RabbitTemplateAspect(amqpMessagingSpanManager);
+  }
+
+  @Bean
+  @ConditionalOnProperty(value = "spring.sleuth.amqp.enabled", matchIfMissing = true)
+  @ConditionalOnMissingBean(AmqpMessagingSpanManager.class)
+  public AmqpMessagingSpanManager amqpMessagingSpanManager(
+      AmqpMessagingSpanInjector amqpMessagingSpanInjector,
+      AmqpMessagingSpanExtractor amqpMessagingSpanExtractor,
+      Tracer tracer) {
+    return new DefaultAmqpMessagingSpanManager(
+        amqpMessagingSpanInjector, amqpMessagingSpanExtractor, tracer);
   }
 }
