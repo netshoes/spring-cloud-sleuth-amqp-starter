@@ -1,13 +1,13 @@
 
-![Build status](https://travis-ci.org/netshoes/spring-cloud-sleuth-amqp-starter.svg?branch=master "Logo Title Text 1")
+![Build status](https://travis-ci.org/netshoes/spring-cloud-sleuth-amqp-starter.svg?branch=master)
 
-# Motivation
+# Why?
 The project spring-cloud-sleuth does not provided a instrumentation for spring-rabbit. In this project we implement this instrumentation.
 
 # Compatibility
 | spring-cloud-sleuth-amqp-starter  | spring-cloud-sleuth | spring-rabbit |
 | --------------------------------- | ------------------- | ------------- |
-| 1.0.RELEASE                       | 1.2.1.RELEASE       | 1.7.3.RELEASE |
+| 0.8-SNAPSHOT                      | 1.2.1.RELEASE       | 1.7.3.RELEASE |
 
 # Usage
 Add the following dependency to project:
