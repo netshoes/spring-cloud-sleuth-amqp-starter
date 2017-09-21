@@ -11,8 +11,10 @@ env:
     - # ^^ GPG_KEY_NAME
     - secure: "LJbLYBUgwIiA0hX5Hj2qeHJAyoo4wfAc4YemO/aeeBY7kyNT4DpzaBpfgs+XO+NccnLX5ftEhKKwqCN5hJs2li1u4iJDHPHmkv7faQ2LS+3yRw8hIbIOdNm7VOSN695AdWcZ/GPdnaWpa/jeG/OwbwfBQefVFQOaLId7CroRC5/tlzn8rsJkfrqYb/AzR6UJbNbbA9ptT3lqL9V0wd9s1J03rfOrO/XreqWzShqR8GxPVjWiTgipyB618gaaUR19lA7pCbNOFTnHOagAOrAuOj+/ctkAu+jklv4nW9b4HVgfbDa5fMDdjyIEZ4QWQQoRrGHsilEII5+IRmxfzKpt03zNOjxzaNRr/BtrlTV7hlkezgckmQAP97SXri+j1n1hNXV/TaubE4CC+A5mOG8mReuN84EjTzrxTjYdgjVf9aVK6tDfWhSXleoe/x31SJC0gzldFSQw13ExbS2jpAH0UWs0H5I3tbvpFolQIh4eUhjoYMwaM7Q/Iw3wt2z4TM3RRYae2htu0JAADavrzuZ7W+/fS+L41CuQzhf44Hixzj/ZpmS2vOORSoiuLPEuyEyP7CXHCGC+jmb0ewIEdNuEvUo4smEPOMhNPb9Qbs0GxjM8sZV69af/CKxo2gOuKZjq2s6NNXVOGNyLeiC6/FX8fiDwDE4H+hkmKj85vQcEUe0="
     - # ^^ GPG_PASSPHRASE
+    - secure: "UBPAognMcxa1mcQu7J+3w2VCgstdS4aS9UqC1T0I2RT0BusDnSgdpBUvr1bXZnXGeaGqxu626IH6JZ17LgliNw0beV3Z4bRHUnYIUA2loDN0Z7MF0DXwdbopbVNxtJTeuYHv9EN+0X1IHdWG42p/lmaYyHjlmzjy380H0pbvuuHE43X5aWKEXjVEkmyPxqfwqd9YJ1XHwpPMURHqArMnE8XEkBnQl2ETeSNEP1mbt9jQPMQ9CZIEXJyGR5RgNPmrbi1r8XEFCB7Uezc1jKoNPrc99cxaxWHX353BaUXSqCKBfUxIjKrNh3HxQfW9kHt5CCKxrmJY/jEoByLH7/EXWhXCn9uR2PZFAYkdGXUgrOC20rvmbjZwKA2fuIV2FOuyWK5PLSwki5ym3abyUwhB0jPegSVN7tFOXc8ynwqrDwZdbTw7QFvVc0K/OPdZ7NC5SbkZEpTxGIZfuainYGV56327pgQeSoR94GCC+p9dyrdb01fABNhnKOGpi7nYSR4Yg8aUc2TR30ZaxjNxFZXYK24ZxHs90Myagfz/Nns3rMiUEWG4VUuqVK2AWVvfzGsigu9vVqVFuhw2KUpbH7KFQFQG1W96CLJSROudisgz3VXqZu+XFee09rnEXfUj5Nh/JomIhVzIAq1aStgfSK1uMkkaAQMCT5OeIzQlTvyZ8Hs="
+    - # ^^ COVERALLS_REPO_TOKEN
 install: mvn install -P !build-extras -DskipTests=true -Dmaven.javadoc.skip=true -B -V
-script: mvn test -P !build-extras -B
+script: mvn test coveralls:report -DrepoToken=$COVERALLS_REPO_TOKEN -P !build-extras -B
 
 cache:
   directories:

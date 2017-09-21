@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * AutoConfiguration that register a {@link RabbitListenerAspect}, a {@link RabbitTemplateAspect}
- * and {@link AmqpMessagingSpanManager}.
+ * AutoConfiguration that register a {@link RabbitListenerAspect}, a {@link AmqpTemplateAspect} and
+ * {@link AmqpMessagingSpanManager}.
  *
  * @author André Ignacio
  */
@@ -35,9 +35,9 @@ public class SleuthAmqpMessagingAutoConfiguration {
   @Bean
   @ConditionalOnProperty(value = "spring.sleuth.amqp.enabled", matchIfMissing = true)
   @ConditionalOnMissingBean(RabbitListenerAspect.class)
-  public RabbitTemplateAspect rabbitTemplateAspect(
+  public AmqpTemplateAspect rabbitTemplateAspect(
       AmqpMessagingSpanManager amqpMessagingSpanManager) {
-    return new RabbitTemplateAspect(amqpMessagingSpanManager);
+    return new AmqpTemplateAspect(amqpMessagingSpanManager);
   }
 
   @Bean

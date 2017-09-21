@@ -1,5 +1,6 @@
-
+[![Build Status](https://travis-ci.org/netshoes/spring-cloud-sleuth-amqp-starter.svg?branch=master)](https://travis-ci.org/netshoes/spring-cloud-sleuth-amqp-starter)
 ![Build status](https://travis-ci.org/netshoes/spring-cloud-sleuth-amqp-starter.svg?branch=master)
+[![License Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Why?
 The project spring-cloud-sleuth does not provided a instrumentation for spring-rabbit. In this project we implement this instrumentation.
@@ -19,7 +20,7 @@ Add the following dependency to project:
 </dependency>
 ```
 
-# Disabling
+# Disabling auto configuration
 If you want disable only this sleuth instrumentation set `spring.sleuth.amqp.enabled` to `false`.
 
 
