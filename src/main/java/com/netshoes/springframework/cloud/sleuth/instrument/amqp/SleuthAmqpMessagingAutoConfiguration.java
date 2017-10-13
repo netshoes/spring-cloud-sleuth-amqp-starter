@@ -34,7 +34,7 @@ public class SleuthAmqpMessagingAutoConfiguration {
 
   @Bean
   @ConditionalOnProperty(value = "spring.sleuth.amqp.enabled", matchIfMissing = true)
-  @ConditionalOnMissingBean(RabbitListenerAspect.class)
+  @ConditionalOnMissingBean(AmqpTemplateAspect.class)
   public AmqpTemplateAspect rabbitTemplateAspect(
       AmqpMessagingSpanManager amqpMessagingSpanManager) {
     return new AmqpTemplateAspect(amqpMessagingSpanManager);

@@ -53,6 +53,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring.cloud.sleuth.version>1.2.1.RELEASE</spring.cloud.sleuth.version>
     <spring-cloud-sleuth-amqp.version>0.8</spring-cloud-sleuth-amqp.version>
+    <commons.logging.version>1.2</commons.logging.version>
 
     <!-- Versions Plguins -->
     <maven.plugin.gpg.version>1.5</maven.plugin.gpg.version>
@@ -89,6 +90,27 @@
       <groupId>com.netshoes</groupId>
       <artifactId>spring-cloud-sleuth-amqp</artifactId>
       <version>${spring-cloud-sleuth-amqp.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>cglib</groupId>
+      <artifactId>cglib</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.aspectj</groupId>
+      <artifactId>aspectjweaver</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>${commons.logging.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
