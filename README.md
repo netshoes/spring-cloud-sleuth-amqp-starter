@@ -3,7 +3,7 @@
 [![License Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Why?
-The project spring-cloud-sleuth does not provided a instrumentation for spring-rabbit. In this project we implement this instrumentation.
+The project spring-cloud-sleuth does not provided a instrumentation for spring-rabbit. In this project we implemented this instrumentation.
 
 # Compatibility
 | spring-cloud-sleuth-amqp-starter  | spring-cloud-sleuth | spring-rabbit |
