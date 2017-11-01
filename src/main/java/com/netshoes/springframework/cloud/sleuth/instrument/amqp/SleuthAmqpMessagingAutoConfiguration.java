@@ -36,8 +36,9 @@ public class SleuthAmqpMessagingAutoConfiguration {
   @ConditionalOnProperty(value = "spring.sleuth.amqp.enabled", matchIfMissing = true)
   @ConditionalOnMissingBean(AmqpTemplateAspect.class)
   public AmqpTemplateAspect rabbitTemplateAspect(
-      AmqpMessagingSpanManager amqpMessagingSpanManager) {
-    return new AmqpTemplateAspect(amqpMessagingSpanManager);
+      AmqpMessagingSpanManager amqpMessagingSpanManager,
+      SpanManagerMessagePostProcessor spanManagerMessagePostProcessor) {
+    return new AmqpTemplateAspect(amqpMessagingSpanManager, spanManagerMessagePostProcessor);
   }
 
   @Bean
@@ -49,5 +50,13 @@ public class SleuthAmqpMessagingAutoConfiguration {
       Tracer tracer) {
     return new DefaultAmqpMessagingSpanManager(
         amqpMessagingSpanInjector, amqpMessagingSpanExtractor, tracer);
+  }
+
+  @Bean
+  @ConditionalOnProperty(value = "spring.sleuth.amqp.enabled", matchIfMissing = true)
+  @ConditionalOnMissingBean(SpanManagerMessagePostProcessor.class)
+  public SpanManagerMessagePostProcessor spanManagerMessagePostProcessor(
+      AmqpMessagingSpanManager amqpMessagingSpanManager) {
+    return new SpanManagerMessagePostProcessor(amqpMessagingSpanManager);
   }
 }
