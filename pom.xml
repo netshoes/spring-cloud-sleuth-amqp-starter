@@ -5,7 +5,7 @@
   <groupId>com.netshoes</groupId>
   <artifactId>spring-cloud-sleuth-amqp-starter</artifactId>
   <name>${project.groupId}:${project.artifactId}</name>
-  <version>0.9-SNAPSHOT</version>
+  <version>0.8.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <description>Implementation of spring-rabbit instrumentation for spring-cloud-sleuth.
@@ -50,7 +50,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring.cloud.sleuth.version>1.2.1.RELEASE</spring.cloud.sleuth.version>
-    <spring-cloud-sleuth-amqp.version>0.8</spring-cloud-sleuth-amqp.version>
+    <spring-cloud-sleuth-amqp.version>0.8.1-SNAPSHOT</spring-cloud-sleuth-amqp.version>
     <commons.logging.version>1.2</commons.logging.version>
 
     <!-- Versions Plguins -->
