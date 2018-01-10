@@ -5,7 +5,7 @@
   <groupId>com.netshoes</groupId>
   <artifactId>spring-cloud-sleuth-amqp-starter</artifactId>
   <name>${project.groupId}:${project.artifactId}</name>
-  <version>0.9-SNAPSHOT</version>
+  <version>0.8.4</version>
   <packaging>jar</packaging>
 
   <description>Implementation of spring-rabbit instrumentation for spring-cloud-sleuth.
@@ -43,7 +43,7 @@
     <developerConnection>scm:git:git@github.com:netshoes/spring-cloud-sleuth-amqp-starter.git
     </developerConnection>
     <url>git@github.com:netshoes/spring-cloud-sleuth-amqp-starter.git</url>
-    <tag>HEAD</tag>
+    <tag>0.8.4</tag>
   </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
