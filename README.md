@@ -3,12 +3,14 @@
 [![License Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Why?
-The project spring-cloud-sleuth does not provided a instrumentation for spring-rabbit. In this project we implemented this instrumentation.
+The project spring-cloud-sleuth does not provided a instrumentation for spring-rabbit. In project 
+[spring-cloud-sleuth-amqp](https://github.com/netshoes/spring-cloud-sleuth-amqp) we implemented this 
+instrumentation, this project is a starter for it.
 
 # Compatibility
 | spring-cloud-sleuth-amqp-starter  | spring-cloud-sleuth | spring-rabbit |
 | --------------------------------- | ------------------- | ------------- |
-| 0.8.4                             | 1.2.1.RELEASE       | 1.7.3.RELEASE |
+| 0.9                               | 1.2.1.RELEASE       | 1.7.3.RELEASE |
 
 # Usage
 Add the following dependency to project:
@@ -16,7 +18,7 @@ Add the following dependency to project:
 <dependency>
   <groupId>com.netshoes</groupId>
   <artifactId>spring-cloud-sleuth-amqp-starter</artifactId>
-  <version>0.8.4</version>
+  <version>0.9</version>
 </dependency>
 ```
 
