@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/netshoes/spring-cloud-sleuth-amqp-starter.svg?branch=master)](https://travis-ci.org/netshoes/spring-cloud-sleuth-amqp-starter)
 [![Coverage Status](https://coveralls.io/repos/netshoes/spring-cloud-sleuth-amqp-starter/badge.svg?branch=master&service=github)](https://coveralls.io/github/netshoes/spring-cloud-sleuth-amqp-starter?branch=master)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.netshoes/spring-cloud-sleuth-amqp-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.netshoes/spring-cloud-sleuth-amqp-starter)
 [![License Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Why?
