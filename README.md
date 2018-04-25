@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/netshoes/spring-cloud-sleuth-amqp-starter.svg?branch=master)](https://travis-ci.org/netshoes/spring-cloud-sleuth-amqp-starter)
 [![Coverage Status](https://coveralls.io/repos/netshoes/spring-cloud-sleuth-amqp-starter/badge.svg?branch=master&service=github)](https://coveralls.io/github/netshoes/spring-cloud-sleuth-amqp-starter?branch=master)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.netshoes/spring-cloud-sleuth-amqp-starter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.netshoes/spring-cloud-sleuth-amqp-starter)
 [![License Apache2](https://img.shields.io/hexpm/l/plug.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Why?
@@ -11,6 +10,7 @@ instrumentation, this project is a starter for it.
 # Compatibility
 | spring-cloud-sleuth-amqp-starter  | spring-cloud-sleuth | spring-rabbit |
 | --------------------------------- | ------------------- | ------------- |
+| 0.10                              | 1.2.6.RELEASE       | 1.7.7.RELEASE |
 | 0.9                               | 1.2.1.RELEASE       | 1.7.3.RELEASE |
 
 # Usage
@@ -19,7 +19,7 @@ Add the following dependency to project:
 <dependency>
   <groupId>com.netshoes</groupId>
   <artifactId>spring-cloud-sleuth-amqp-starter</artifactId>
-  <version>0.9</version>
+  <version>0.10</version>
 </dependency>
 ```
 
