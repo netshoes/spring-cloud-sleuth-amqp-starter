@@ -49,8 +49,8 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <spring.cloud.sleuth.version>1.2.1.RELEASE</spring.cloud.sleuth.version>
-    <spring-cloud-sleuth-amqp.version>0.9</spring-cloud-sleuth-amqp.version>
+    <spring.cloud.sleuth.version>1.2.6.RELEASE</spring.cloud.sleuth.version>
+    <spring-cloud-sleuth-amqp.version>0.10</spring-cloud-sleuth-amqp.version>
     <commons.logging.version>1.2</commons.logging.version>
 
     <!-- Versions Plguins -->
